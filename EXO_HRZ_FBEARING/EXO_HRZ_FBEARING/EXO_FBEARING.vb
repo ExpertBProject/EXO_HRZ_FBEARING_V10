@@ -235,7 +235,7 @@ Public Class EXO_FBEARING
                         sSQL &= " From OITM I "
                         sSQL &= " INNER JOIN (SELECT ""ItemCode"", sum(""OnHand"") ""STOCK"" FROM OITW GROUP BY ""ItemCode"")S ON S.""ItemCode""= I.""ItemCode"" "
                         sSQL &= " Left JOIN OITB B ON I.""ItmsGrpCod""=B.""ItmsGrpCod"" "
-                        sSQL &= " WHERE I.""QryGroup2""='N' and I.""validFor""='Y' "
+                        sSQL &= " WHERE I.""QryGroup2""='Y' and I.""validFor""='Y' "
                         OdtStock = objGlobal.refDi.SQL.sqlComoDataTable(sSQL)
                         If OdtStock.Rows.Count > 0 Then
                             Try
